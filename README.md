@@ -1,1 +1,1 @@
-This is a skincare website for selling skincare products
+This is a skincare website for selling skincare products and face care
