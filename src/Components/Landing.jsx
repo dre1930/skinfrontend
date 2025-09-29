@@ -31,7 +31,7 @@ function Landing({ title = "Skin like milk", semiTitle = "OUR PRODUCT RANGE" }) 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/products");
+        const res = await axios.get("/api/products");
         setProducts(res.data);
       } catch (error) {
         console.error("Error fetching products:", error);
