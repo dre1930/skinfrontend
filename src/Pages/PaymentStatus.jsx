@@ -14,7 +14,7 @@ const PaymentStatus = () => {
     if (reference) {
       const verifyPayment = async (ref) => {
         try {
-          const res = await axios.get(`http://localhost:5000/api/payments/verify/${reference}`
+          const res = await axios.get(`/api/payments/verify/${reference}`
             ,);
           
           console.log(res.data);
