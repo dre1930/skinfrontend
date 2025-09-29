@@ -14,7 +14,7 @@ const PaymentStatus = () => {
     if (reference) {
       const verifyPayment = async (ref) => {
         try {
-          const res = await axios.get(`/api/payments/verify/${reference}`
+          const res = await axios.get(`https://skinbackend-ew51.onrender.com/api/payment-status/verify/${reference}`
             ,);
           
           console.log(res.data);

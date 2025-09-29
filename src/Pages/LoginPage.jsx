@@ -15,7 +15,7 @@ function LoginPage() {
 
     const handleLogin = async () => {
       try {
-    const res = await fetch("/api/auth/login", {
+    const res = await fetch("https://skinbackend-ew51.onrender.com/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

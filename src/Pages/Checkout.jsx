@@ -38,7 +38,7 @@ useEffect(() => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const { data } = await axios.get("/api/cart/get", {
+        const { data } = await axios.get("https://skinbackend-ew51.onrender.com/api/cart/get", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });
         
@@ -73,7 +73,7 @@ useEffect(() => {
 };
 
       console.log("Order data:", orderData);
-      const res = await axios.post("/api/orders/checkout", orderData, {
+      const res = await axios.post("https://skinbackend-ew51.onrender.com/api/orders/checkout", orderData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
       const order = res.data.order;
@@ -81,7 +81,7 @@ useEffect(() => {
 
 
       const paystackRes = await axios.post(
-      "/api/payments/initialize",
+      "https://skinbackend-ew51.onrender.com/api/payments/initialize",
       {
         email,
         total: order.total, // in Naira

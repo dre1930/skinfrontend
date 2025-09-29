@@ -19,7 +19,7 @@ function AdminProducts() {
   // Fetch products
   const fetchProducts = async () => {
     try {
-      const res = await fetch("/api/products");
+      const res = await fetch("https://skinbackend-ew51.onrender.com/api/products");
       const data = await res.json();
       setProducts(data);
     } catch (err) {
@@ -30,7 +30,7 @@ function AdminProducts() {
   // Fetch orders
   const fetchOrders = async () => {
     try {
-      const res = await fetch("/api/orders", {
+      const res = await fetch("https://skinbackend-ew51.onrender.com/api/orders", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -62,7 +62,7 @@ function AdminProducts() {
       formData.append("description", form.description);
       if (form.image) formData.append("image", form.image);
 
-      const res = await fetch("/api/products", {
+      const res = await fetch("https://skinbackend-ew51.onrender.com/api/products", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -90,7 +90,7 @@ function AdminProducts() {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      await fetch(`/api/products/${id}`, {
+      await fetch(`https://skinbackend-ew51.onrender.com/api/products/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -104,7 +104,7 @@ function AdminProducts() {
   // Update product
   const handleUpdate = async (id, updatedProduct) => {
     try {
-      const res = await fetch(`/api/products/${id}`, {
+      const res = await fetch(`https://skinbackend-ew51.onrender.com/api/products/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

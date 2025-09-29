@@ -21,7 +21,7 @@ function ProductDetails({ addToCart }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await  axios.get(`/api/products/${id}`);
+        const res = await  axios.get(`https://skinbackend-ew51.onrender.com/api/products/${id}`);
         //const data = await res.json();
         setProduct(res.data);
       } catch (error) {
@@ -61,7 +61,7 @@ function ProductDetails({ addToCart }) {
           {/* Image */}
           <div className="overflow-hidden rounded-lg">
            <img
-  src= {product.image}   // ✅ prepend backend URL
+  src= {product.image? `https://skinbackend-ew51.onrender.com${product.image}` : "/uploads/default.png"}   // ✅ prepend backend URL
   alt={product.name}
   className="rounded-lg transition-transform duration-500 transform hover:scale-110"
 />

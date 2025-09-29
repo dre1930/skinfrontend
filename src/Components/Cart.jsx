@@ -11,7 +11,7 @@ function Cart({ item, onAdd, onSubtract, onRemove }) {
       <div className="col-span-8 flex gap-4">
         {/* Image */}
         <img
-          src={image}
+          src={image? `https://skinbackend-ew51.onrender.com${image}` : "/uploads/default.png"}
           alt={name}
           className="w-32 h-48 object-cover rounded-md transform hover:scale-105 transition"
         />

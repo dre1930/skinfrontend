@@ -30,7 +30,7 @@ function SignupPage() {
     }
     
     try {
-      const res = await fetch("/api/auth/register", {
+      const res = await fetch("https://skinbackend-ew51.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

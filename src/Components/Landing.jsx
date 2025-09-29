@@ -31,7 +31,7 @@ function Landing({ title = "Skin like milk", semiTitle = "OUR PRODUCT RANGE" }) 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("/api/products");
+        const res = await axios.get("https://skinbackend-ew51.onrender.com/api/products");
         setProducts(res.data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -130,11 +130,11 @@ function Landing({ title = "Skin like milk", semiTitle = "OUR PRODUCT RANGE" }) 
                 key={product._id}
                 className="relative rounded-xl overflow-hidden shadow-md bg-white"
               >
-                <span className="absolute top-2 left-[-20px] bg-white/80 text-gray-700 text-lg font-bold text-2xl px-6 sm:px-9 py-1 rounded-full shadow mt-5">
+                <span className="absolute top-2 left-[-20px] bg-white/80 text-gray-700 font-bold text-2xl px-6 sm:px-9 py-1 rounded-full shadow mt-5">
                   {product.name}
                 </span>
                 <img
-                  src={product.image}
+                  src={product.image? `https://skinbackend-ew51.onrender.com${product.image}` : "/uploads/default.png"}
                   alt={product.name}
                   className="w-full h-full object-cover rounded transform transition-transform duration-300 hover:scale-105"
                 />
@@ -188,7 +188,7 @@ function Landing({ title = "Skin like milk", semiTitle = "OUR PRODUCT RANGE" }) 
                 className="relative bg-white rounded-lg shadow-md flex-shrink-0 w-full"
               >
                 <img
-                  src={product.image}
+                  src={product.image? `https://skinbackend-ew51.onrender.com${product.image}` : "/uploads/default.png"}
                   alt={product.name}
                   className="w-full h-full object-cover rounded-t-lg  transform transition-transform duration-300 hover:scale-105"
                 />

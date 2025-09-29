@@ -11,7 +11,7 @@ function ProductList({addToCart}) {
 
 
   useEffect(() => {
-    axios.get('/api/products')
+    axios.get('https://skinbackend-ew51.onrender.com/api/products')
        .then(res => setProducts(res.data))
         .catch(err => console.error("Error fetching products:", err));
         toast.success("products")
@@ -30,7 +30,7 @@ function ProductList({addToCart}) {
             <ProductCard 
           key={product._id}
           id={product._id}
-          image={product.image}
+          image={product.image? `https://skinbackend-ew51.onrender.com${product.image}` : "/uploads/default.png"}
           name={product.name}
           price={product.price}
           addToCart={addToCart}
