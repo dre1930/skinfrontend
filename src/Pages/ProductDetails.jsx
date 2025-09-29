@@ -21,7 +21,7 @@ function ProductDetails({ addToCart }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await  axios.get(`http://localhost:5000/api/products/${id}`);
+        const res = await  axios.get(`/api/products/${id}`);
         //const data = await res.json();
         setProduct(res.data);
       } catch (error) {
