@@ -39,7 +39,7 @@ useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) return; // don’t fetch if not logged in
 
-        const res = await fetch("http://localhost:5000/api/cart/get", {
+        const res = await fetch("/api/cart/get", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -59,7 +59,7 @@ const addToCart = async (product, qty = 1) => {
       const token = localStorage.getItem("token");
       if (!token) return toast.warn("Please login first");
 
-      const res = await fetch("http://localhost:5000/api/cart/add", {
+      const res = await fetch("/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const handleSubtract = async (id) => {
     if (item && item.quantity > 1) {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:5000/api/cart/update", {
+        const res = await fetch("/api/cart/update", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const handleSubtract = async (id) => {
   const handleRemove = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/cart/remove/${id}`, {
+      const res = await fetch(`/api/cart/remove/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
